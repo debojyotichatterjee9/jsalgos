@@ -10,10 +10,12 @@ let sampleArray =
         // 45, 19, 37, 23, 42, 83, 92, 77, 95, 85,
         69, 52, 8, 38, 68, 49, 17, 70, 33, 22];
 
-
+let operations = 0;
 /*==============================================================FOR LOOP METHOD==============================================================*/
-console.time(`forLoopMethod`)
+console.log(`\n==For-Loop Method==`);
+console.time(`Execution Time`);
 let forLoopMethod = (sampleArray) => {
+    operations = 0;
     let len = sampleArray.length;
     for (let i = 0; i < len; i++) {
         for (let j = 0; j < len; j++) {
@@ -22,17 +24,21 @@ let forLoopMethod = (sampleArray) => {
                 sampleArray[j] = sampleArray[j + 1];
                 sampleArray[j + 1] = tmp;
             }
+            operations++;
         }
     }
     return sampleArray;
 };
 console.log(forLoopMethod(sampleArray));
-console.timeEnd(`forLoopMethod`);
+console.log(`Operations: ${operations}`);
+console.timeEnd(`Execution Time`);
 
 
 /*==============================================================DO-WHILE LOOP METHOD==============================================================*/
-console.time(`doWhileLoopMethod`);
+console.log(`\n==Do-While-Loop Method==`);
+console.time(`Execution Time`);
 let doWhileLoopMethod = (inputArr) => {
+    operations = 0;
     let len = inputArr.length;
     let swapped;
     do {
@@ -44,17 +50,21 @@ let doWhileLoopMethod = (inputArr) => {
                 inputArr[i + 1] = tmp;
                 swapped = true;
             }
+            operations++;
         }
     } while (swapped);
     return inputArr;
 };
 console.log(doWhileLoopMethod(sampleArray));
-console.timeEnd(`doWhileLoopMethod`);
+console.log(`Operations: ${operations}`);
+console.timeEnd(`Execution Time`);
 
 
 /*==============================================================FOR EACH METHOD==============================================================*/
-console.time(`forEachMethod`)
+console.log(`\n==For-Each Method==`);
+console.time(`Execution Time`);
 let forEachMethod = (sampleArray) => {
+    operations = 0;
     let len = sampleArray.length;
     sampleArray.forEach(item => {
         sampleArray.forEach((elem, index) => {
@@ -62,17 +72,21 @@ let forEachMethod = (sampleArray) => {
             if (sampleArray[index] > sampleArray[index + 1]) {
                 [sampleArray[index], sampleArray[index + 1]] = [sampleArray[index + 1], sampleArray[index]];
             }
+            operations++;
         })
     })
     return sampleArray;
 };
 console.log(forEachMethod(sampleArray));
-console.timeEnd(`forEachMethod`);
+console.log(`Operations: ${operations}`);
+console.timeEnd(`Execution Time`);
 
 
 /*==============================================================ARRAY.MAP METHOD==============================================================*/
-console.time(`arrayMapMethod`)
+console.log(`\n==Array.Prototype.map() Method==`);
+console.time(`Execution Time`)
 let arrayMapMethod = (sampleArray) => {
+    operations = 0;
     let len = sampleArray.length;
     sampleArray.map(item => {
         sampleArray.map((elem, index) => {
@@ -80,9 +94,11 @@ let arrayMapMethod = (sampleArray) => {
             if (sampleArray[index] > sampleArray[index + 1]) {
                 [sampleArray[index], sampleArray[index + 1]] = [sampleArray[index + 1], sampleArray[index]];
             }
+            operations++;
         })
     })
     return sampleArray;
 };
 console.log(arrayMapMethod(sampleArray));
-console.timeEnd(`arrayMapMethod`);
+console.log(`Operations: ${operations}`);
+console.timeEnd(`Execution Time`);
