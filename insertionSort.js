@@ -32,3 +32,6 @@ let insertionSort = (sampleArray) => {
 console.log(insertionSort(sampleArray));
 console.log(`Operations: ${operations}`);
 console.timeEnd(`Execution Time`);
+
+/*==============================================================ES6 METHOD==============================================================*/
+//to be done
