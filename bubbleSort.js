@@ -65,7 +65,6 @@ console.log(`\n==For-Each Method==`);
 console.time(`Execution Time`);
 let forEachMethod = (sampleArray) => {
     operations = 0;
-    let len = sampleArray.length;
     sampleArray.forEach(item => {
         sampleArray.forEach((elem, index) => {
             // [elem, index] = [elem, index]
@@ -87,7 +86,6 @@ console.log(`\n==Array.Prototype.map() Method==`);
 console.time(`Execution Time`)
 let arrayMapMethod = (sampleArray) => {
     operations = 0;
-    let len = sampleArray.length;
     sampleArray.map(item => {
         sampleArray.map((elem, index) => {
             // [elem, index] = [elem, index]
