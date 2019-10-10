@@ -34,7 +34,7 @@ let mergeSort = (sampleArray) => {
 };
 
 // Merging the two arrays: left and right
-function merge (left, right) {
+let merge = (left, right) => {
     let resultArray = [], leftIndex = 0, rightIndex = 0;
   
     while (leftIndex < left.length && rightIndex < right.length) {
